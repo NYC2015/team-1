@@ -40,7 +40,8 @@ angular.module('starter.controllers', [])
 	$scope.classes = Classes.all();
 })
 
-.controller('IdeaCtrl', function($scope) {
+.controller('IdeaCtrl', function($scope, $stateParams, Classes) {
+	$scope.class = Classes.get($stateParams.classId);
   
 })
 
