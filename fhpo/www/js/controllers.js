@@ -72,7 +72,7 @@ angular.module('starter.controllers', [])
 	}
 
 	$scope.goIdea = function(num) {
-		
+		$state.go('idea-detail');
 	}
 
 	$scope.join = function(idea) {
@@ -85,6 +85,10 @@ angular.module('starter.controllers', [])
 		return false;
 	}
   
+})
+
+.controller('IdeaDetailCtrl', function($scope, $state, $stateParams) {
+
 })
 
 .controller('UpvoteCtrl', function($scope) {

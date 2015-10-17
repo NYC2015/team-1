@@ -61,6 +61,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       controller: 'AddClassCtrl'
   })
 
+  .state('idea-detail', {
+      url: '/idea/:ideaId',
+      templateUrl: "templates/idea-detail.html",
+      controller: 'IdeaDetailCtrl'
+  })
+
   // setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',
