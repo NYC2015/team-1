@@ -97,9 +97,10 @@ angular.module('starter.controllers', [])
   
 })
 
-.controller('IdeaDetailCtrl', function($scope, $state, $stateParams) {
+.controller('IdeaDetailCtrl', function($scope, $state, Classes, $stateParams) {
 	console.log($stateParams.classId);
 	console.log($stateParams.ideaId);
+	$scope.class = Classes.get($stateParams.classId);
 })
 
 .controller('UpvoteCtrl', function($scope) {
