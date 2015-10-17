@@ -68,7 +68,7 @@ angular.module('starter.services', [])
     type: 'regular'
   }];
 
-  var currentUser;
+  var currentUser = {};
 
   return {
     isUser: function(name,pass) {
@@ -82,6 +82,9 @@ angular.module('starter.services', [])
     },
     isAdmin: function() {
       return currentUser.type == 'admin';
+    },
+    getUser: function() {
+      return currentUser;
     }
   };
 })
@@ -151,7 +154,8 @@ angular.module('starter.services', [])
     password : 'kennedy2',
     subject : 'Costumes for Halloween',
     admins : ['admin2'],
-    users : []
+    users : [],
+    ideas: []
   }];
 
   return {

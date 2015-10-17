@@ -40,8 +40,28 @@ angular.module('starter.controllers', [])
 	$scope.classes = Classes.all();
 })
 
-.controller('IdeaCtrl', function($scope, $stateParams, Classes) {
+.controller('IdeaCtrl', function($scope, $state, $stateParams, User, Classes) {
 	$scope.class = Classes.get($stateParams.classId);
+	$scope.ideas = $scope.class.ideas;
+
+	$scope.like = function(idea) {
+		idea.likes = idea.likes + 1;
+		return false;
+	}
+
+	$scope.goIdea = function(num) {
+		
+	}
+
+	$scope.join = function(idea) {
+		for (var i = 0; i < idea.members.length; i++) {
+			if (User.getUser().uname == idea.members[i]) {
+				return false;
+			}
+		}
+		idea.members.push(User.currentUser);
+		return false;
+	}
   
 })
 

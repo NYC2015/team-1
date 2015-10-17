@@ -1,20 +1,13 @@
 <ion-view view-title="{{class.subject}}">
-  <ion-content class="padding">
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="idea in ideas" type="item-text-wrap" href="#/idea/{{idea.id}}">
-        <div class="row">
-              <h2>{{idea.name}}</h2>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="idea in ideas" >
+        <div class='button button-clear button-positive item-icon-right' ng-click='goIdea(idea.id)'>
+        <h2>{{idea.name}}</h2>
         </div>
-        <div class="row">
-          <div class="col-center"> 
-            <button class="button ion-checkmark-circled button-positive">Like</button>
-          </div>
-          <div class="col-center">
-            <button class="button ion-forward button-positive">Join</button>
-          </div>
-        </div>
-      <ion-item>
-     
-  <!--       <i class="icon ion-chevron-right icon-accessory"></i> -->
-
+        <div ng-click='like(idea)' class="button button-small button-clear ion-checkmark-circled button-positive"> {{idea.likes}} Likes</div>
+        <div ng-click='join(idea)' class="button button-small button-clear ion-forward button-positive"> Join</div>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
