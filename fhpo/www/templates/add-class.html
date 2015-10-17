@@ -1,0 +1,19 @@
+<ion-view view-title="Add Class">
+  <ion-content class="padding" style="text-align: center">
+    <label class="item item-input">
+      <span class="input-label">Class Name</span>
+      <input ng-model='name' type="text">
+    </label>
+    <label class="item item-input">
+      <span  class="input-label">Password</span>
+      <input ng-model='password' type="password">
+    </label>
+    <label class="item item-input">
+      <span  class="input-label">Subject</span>
+      <input ng-model='subject' type="text">
+    </label>
+    <br>
+    <br>
+    <button class="button button-block button-positive" ng-click="addClass(name, password, subject)">Add Class</button>
+  </ion-content>
+</ion-view>
