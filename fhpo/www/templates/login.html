@@ -1,6 +1,16 @@
 <br><br><br>
 <ion-view view-title="Login">
   <ion-content class="padding" style="text-align: center">
-	<button class="button button-positive">Login</button>
+  	<label class="item item-input">
+  		<span class="input-label">Username</span>
+  		<input ng-model='user' type="text">
+	</label>
+	<label class="item item-input">
+	  <span  class="input-label">Password</span>
+	  <input ng-model='pass' type="password">
+	</label>
+
+	<br>
+	<button class="button button-positive" ng-click="login(user,pass)">Login</button>
 	</ion-content>
 </ion-view>

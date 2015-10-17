@@ -27,6 +27,11 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('LoginCtrl', function($scope) {
-  
+.controller('LoginCtrl', function($scope, $state, User) {
+
+  $scope.login = function(user,pass) {
+  	if (User.isUser(user, pass)) {
+  		$state.go('classes');
+  	}
+  }
 });
