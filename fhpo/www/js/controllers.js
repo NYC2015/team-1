@@ -26,3 +26,7 @@ angular.module('starter.controllers', [])
     enableFriends: true
   };
 });
+
+.controller('LoginCtrl', function($scope) {
+  
+})
