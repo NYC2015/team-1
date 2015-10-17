@@ -139,6 +139,16 @@ angular.module('starter.services', [])
       owner : 'regular2',
       likes : 2,
       members : ['regular2'],
+      posts: [{
+        id: 2,
+        name: 'Legit Post',
+        description: 'What do we do with proj?',
+        messages: [{name: "regular1", msg: "I know"}, {name: "regular2", msg: "I don't know"}]
+      }, {
+        id: 3,
+        name: 'Legit Post2',
+        description: 'legit post2',
+        messages: [{name: "regular1", msg: "I know2"}, {name: "regular2", msg: "I don't know2"}]}],
       milestones : [{
         id : 1234,
         name : 'Milestone 1',
@@ -152,6 +162,16 @@ angular.module('starter.services', [])
       owner : 'regular1',
       likes : 1,
       members : ['regular1', 'regular2'],
+      posts: [{
+        id: 4,
+        name: 'Legit Post',
+        description: 'What do we do with proj?',
+        messages: [{name: "regular1", msg: "I know"}, {name: "regular2", msg: "I don't know"}]
+      }, {
+        id: 5,
+        name: 'Legit Post2',
+        description: 'legit post2',
+        messages: [{name: "regular1", msg: "I know2"}, {name: "regular2", msg: "I don't know2"}]}],
       milestones : []
     }, {
       id : 4,
@@ -160,6 +180,16 @@ angular.module('starter.services', [])
       owner : 'regular2',
       likes : 2,
       members : ['regular2'],
+      posts: [{
+        id: 6,
+        name: 'Legit Post',
+        description: 'What do we do with proj?',
+        messages: [{name: "regular1", msg: "I know"}, {name: "regular2", msg: "I don't know"}]
+      }, {
+        id: 7,
+        name: 'Legit Post2',
+        description: 'legit post2',
+        messages: [{name: "regular1", msg: "I know2"}, {name: "regular2", msg: "I don't know2"}]}],
       milestones : [{
         id : 1356,
         name : 'Milestone 1',
@@ -193,6 +223,16 @@ angular.module('starter.services', [])
       owner : 'admin1',
       likes : 15,
       members : ['admin1', 'regular1'],
+      posts: [{
+        id: 8,
+        name: 'Legit Post',
+        description: 'What do we do with proj?',
+        messages: [{name: "regular1", msg: "I know"}, {name: "regular2", msg: "I don't know"}]
+      }, {
+        id: 9,
+        name: 'Legit Post2',
+        description: 'legit post2',
+        messages: [{name: "regular1", msg: "I know2"}, {name: "regular2", msg: "I don't know2"}]}],
       milestones : [{
         id : 156,
         name : 'Milestone 1',
@@ -218,6 +258,16 @@ angular.module('starter.services', [])
       owner : 'regular1',
       likes : 4,
       members : ['regular1'],
+      posts: [{
+        id: 10,
+        name: 'Legit Post',
+        description: 'What do we do with proj?',
+        messages: [{name: "regular1", msg: "I know"}, {name: "regular2", msg: "I don't know"}]
+      }, {
+        id: 11,
+        name: 'Legit Post2',
+        description: 'legit post2',
+        messages: [{name: "regular1", msg: "I know2"}, {name: "regular2", msg: "I don't know2"}]}],
       milestones : [{
         id : 99,
         name : 'Milestone 1',
