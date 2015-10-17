@@ -129,6 +129,14 @@ angular.module('starter.controllers', [])
 		idea.likes = idea.likes + 1;
 		return false;
 	}
+
+	$scope.milestones = function() {
+		$state.go('milestonelist', {classId: $stateParams.classId, ideaId: $stateParams.ideaId});
+	}
+
+	$scope.posts = function() {
+		$state.go('postslist', {classId: $stateParams.classId, ideaId: $stateParams.ideaId});
+	}
 })
 
 .controller('UpvoteCtrl', function($scope) {
