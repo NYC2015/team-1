@@ -47,8 +47,19 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('ClassCtrl', function($scope, Classes) {
+.controller('ClassCtrl', function($scope, $state, Classes) {
 	$scope.classes = Classes.all();
+
+  $scope.goToAddClass = function() {
+    $state.go('addclass');
+  }
+})
+
+.controller('AddClassCtrl', function($scope, $state, Classes) {
+  $scope.addClass = function(name, password, subject) {
+    Classes.addClass(name, password, subject);
+    $state.go('classes');
+  }
 })
 
 .controller('IdeaCtrl', function($scope, $state, $stateParams, User, Classes) {

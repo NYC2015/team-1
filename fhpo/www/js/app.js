@@ -37,6 +37,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     controller: 'LoginCtrl'
   })
 
+  .state('register',{
+    url: '/register',
+    templateUrl: 'templates/register.html',
+    controller: 'RegisterCtrl'
+  })
+
   .state('classes',{
     url: '/classes',
     templateUrl: 'templates/classes.html',
@@ -49,10 +55,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       controller: 'IdeaCtrl'
   })
 
-  .state('register',{
-    url: '/register',
-    templateUrl: 'templates/register.html',
-    controller: 'RegisterCtrl'
+  .state('addclass', {
+      url: '/addclass',
+      templateUrl: 'templates/add-class.html',
+      controller: 'AddClassCtrl'
   })
 
   // setup an abstract state for the tabs directive

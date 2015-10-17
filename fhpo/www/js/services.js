@@ -174,6 +174,16 @@ angular.module('starter.services', [])
         }
       }
       return null;
+    },
+    addClass: function(username, password, subject) {
+      classes.push({
+        id: Math.random()*100,
+        name: username,
+        password: password,
+        subject: subject,
+        admins: [],
+        users: []
+      });
     }
   };
 });
