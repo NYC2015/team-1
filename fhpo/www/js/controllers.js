@@ -34,4 +34,29 @@ angular.module('starter.controllers', [])
   		$state.go('classes');
   	}
   }
-});
+})
+
+.controller('ClassCtrl', function($scope) {
+
+})
+
+.controller('IdeaCtrl', function($scope) {
+  
+})
+
+.controller('UpvoteCtrl', function($scope) {
+  
+})
+
+.controller('JoinIdeaCtrl', function($scope) {
+  
+})
+
+.controller('PostCtrl', function($scope) {
+  
+})
+
+.controller('MilestoneCtrl', function($scope) {
+  
+})
+;
