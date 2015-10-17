@@ -55,9 +55,10 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('AddClassCtrl', function($scope, $state, Classes) {
+.controller('AddClassCtrl', function($scope, $state, User, Classes) {
+  $scope.username = User.getUser().uname;
   $scope.addClass = function(name, password, subject) {
-    Classes.addClass(name, password, subject);
+    Classes.addClass($scope.username, name, password, subject);
     $state.go('classes');
   }
 })
