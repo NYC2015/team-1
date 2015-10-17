@@ -63,6 +63,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('IdeaCtrl', function($scope, $state, $stateParams, User, Classes) {
+	$scope.id = $stateParams.classId;
 	$scope.class = Classes.get($stateParams.classId);
 	$scope.ideas = $scope.class.ideas;
 
@@ -72,7 +73,7 @@ angular.module('starter.controllers', [])
 	}
 
 	$scope.goIdea = function(num) {
-		$state.go('idea-detail');
+		$state.go('idea-detail', {classId: $scope.id, ideaId: num});
 	}
 
 	$scope.join = function(idea) {
@@ -97,7 +98,8 @@ angular.module('starter.controllers', [])
 })
 
 .controller('IdeaDetailCtrl', function($scope, $state, $stateParams) {
-
+	console.log($stateParams.classId);
+	console.log($stateParams.ideaId);
 })
 
 .controller('UpvoteCtrl', function($scope) {
