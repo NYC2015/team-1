@@ -1,11 +1,12 @@
 <ion-view view-title="{{class.subject}}">
   <ion-content>
-    <button class="button button-block button-positive" ng-click="newIdea()">Add Idea</button>
+    <button class="button button-block button-positive" ng-click="addIdea()">Add Idea</button>
     <ion-list>
       <ion-item ng-repeat="idea in ideas" >
-        <div class='button button-clear button-positive item-icon-right' ng-click='goIdea(idea.id)'>
+        <div class='button button-block button-clear button-positive item-icon-right' ng-click='goIdea(idea.id)'>
         <h2>{{idea.name}}</h2>
         </div>
+        <br>
         <div ng-click='like(idea)' class="button button-small button-clear ion-checkmark-circled button-positive"> {{idea.likes}} Likes</div>
         <div ng-click='join(idea)' class="button button-small button-clear ion-forward button-positive"> Join</div>
       </ion-item>
