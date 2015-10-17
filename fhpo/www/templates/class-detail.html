@@ -1,9 +1,9 @@
-<ion-view view-title="{{class.name}}">
+<ion-view view-title="{{class.subject}}">
   <ion-content class="padding">
    
      <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="idea in ideas" type="item-text-wrap" href="#/idea/{{idea.id}}">
-        <h2>{{class.name}}</h2>
+        <h2>{{idea.name}}</h2>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
 <!--         <ion-option-button class="button-assertive" ng-click="remove(chat)">
