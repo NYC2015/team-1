@@ -189,6 +189,18 @@ angular.module('starter.services', [])
         }
       );
       id++;
+    },
+    getIdea: function(classId, ideaId) {
+      for (var i = 0; i < classes.length; i++) {
+        if (classes[i].id === parseInt(classId)) {
+          for (var j = 0; i < classes[i].ideas.length; j++) {
+            if (classes[i].ideas[j].id === parseInt(ideaId)) {
+              return classes[i].ideas[j];
+            }
+          }
+        }
+      }
+      return false;
     }
   };
 });
