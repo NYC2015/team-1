@@ -84,4 +84,46 @@ angular.module('starter.services', [])
       return currentUser.type == 'admin';
     }
   };
+})
+
+.factory('Classes', function() {
+  var classes = [{
+    id : 139,
+    name : 'JP Morgan Code for Good',
+    password : 'password',
+    subject : 'Program for Social Good',
+    admins : ['admin1'],
+    users : []
+  }, {
+    id : 140,
+    name : 'Kennedy HS Job Class 1',
+    password : 'kennedy1',
+    subject : 'Best Gifts for Christmas',
+    admins : ['admin1'],
+    users : []
+  }, {
+    id : 141,
+    name : 'Kenney HS Job Class 2',
+    password : 'kennedy2',
+    subject : 'Costumes for Halloween',
+    admins : ['admin2'],
+    users : []
+  }];
+
+  return {
+    all: function() {
+      return classes;
+    },
+    remove: function(cl) {
+      classes.splice(classes.indexOf(cl), 1);
+    },
+    get: function(classId) {
+      for (var i = 0; i < classes.length; i++) {
+        if (classes[i].id === parseInt(classId)) {
+          return classes[i];
+        }
+      }
+      return null;
+    }
+  };
 });
