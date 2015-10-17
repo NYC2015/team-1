@@ -107,28 +107,65 @@ angular.module('starter.services', [])
       description : 'An app in which students can submit ideas.',
       owner : 'regular1',
       likes : 1,
-      members : ['regular1']
+      members : ['regular1'],
+      milestones : [{
+        id : 12,
+        name : 'Milestone 1',
+        lookingBack : '',
+        movingFoward : 'Going to design cuz we have not done anything'
+      }, 
+      {
+        id : 3,
+        name : 'Milestone 2',
+         lookingBack : 'design things',
+        movingFoward : 'Going to implement x'
+      }]
     }, {
       id : 2,
       name : 'Feed a Child App',
       description : 'An app that helps deliver food to starving people.',
       owner : 'regular2',
       likes : 2,
-      members : ['regular2']
+      members : ['regular2'],
+      milestones : [{
+        id : 1234,
+        name : 'Milestone 1',
+        lookingBack : '',
+        movingFoward : 'Going to design app cuz we have not done anything'
+      }]
     }, {
       id : 3,
       name : 'Rock the Earth App',
       description : 'An app that allows students to help preserve the earth.',
       owner : 'regular1',
       likes : 1,
-      members : ['regular1', 'regular2']
+      members : ['regular1', 'regular2'],
+      milestones : []
     }, {
       id : 4,
       name : 'Keep a Child Alive App',
       description : 'An app that helps connect those with AIDS.',
       owner : 'regular2',
       likes : 2,
-      members : ['regular2']
+      members : ['regular2'],
+      milestones : [{
+        id : 1356,
+        name : 'Milestone 1',
+        lookingBack : '',
+        movingFoward : 'Going to design cuz we have not done anything'
+      }, 
+      {
+        id : 3999,
+        name : 'Milestone 2',
+         lookingBack : 'design things',
+        movingFoward : 'Going to implement y'
+      },
+       {
+        id : 39,
+        name : 'Milestone 3',
+         lookingBack : 'Implmeneted y',
+        movingFoward : 'Going to implement z'
+      }]
     }]
   }, {
     id : 140,
@@ -143,14 +180,50 @@ angular.module('starter.services', [])
       description : 'Delicious AND Unhealthy!',
       owner : 'admin1',
       likes : 15,
-      members : ['admin1', 'regular1']
+      members : ['admin1', 'regular1'],
+      milestones : [{
+        id : 156,
+        name : 'Milestone 1',
+        lookingBack : '',
+        movingFoward : 'Going to design cuz we have not done anything'
+      }, 
+      {
+        id : 88,
+        name : 'Milestone 2',
+         lookingBack : 'design things',
+        movingFoward : 'Going to implement xy'
+      },
+       {
+        id : 39567,
+        name : 'Milestone 3',
+         lookingBack : 'Implmeneted xy',
+        movingFoward : 'Going to present'
+      }]
     }, {
       id : 6,
       name : 'Bugatti Veyron 16.4',
       description : 'Gotta go fast.',
       owner : 'regular1',
       likes : 4,
-      members : ['regular1']
+      members : ['regular1'],
+      milestones : [{
+        id : 99,
+        name : 'Milestone 1',
+        lookingBack : '',
+        movingFoward : 'Going to design cuz we have not done anything'
+      }, 
+      {
+        id : 9759,
+        name : 'Milestone 2',
+         lookingBack : 'design things',
+        movingFoward : 'Going to implement y'
+      },
+       {
+        id : 3955,
+        name : 'Milestone 3',
+         lookingBack : 'Implmeneted y',
+        movingFoward : 'Going to implement z'
+      }]
     }]
   }, {
     id : 141,
@@ -213,6 +286,20 @@ angular.module('starter.services', [])
           for (var j = 0; i < classes[i].ideas.length; j++) {
             if (classes[i].ideas[j].id === parseInt(ideaId)) {
               return classes[i].ideas[j];
+            }
+          }
+        }
+      }
+      return false;
+    },
+    getMilestones: function(classId, ideaId){
+      for (var i = 0; i < classes.length; i++) {
+        if (classes[i].id === parseInt(classId)) {
+          for (var j = 0; i < classes[i].ideas.length; j++) {
+            if (classes[i].ideas[j].id === parseInt(ideaId)) {
+              for(var h = 0; h < classes[i].ideas[j].milestons.length; h++){
+                return classes[i].ideas[j].milestones[h];
+              }
             }
           }
         }

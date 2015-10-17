@@ -110,6 +110,20 @@ angular.module('starter.controllers', [])
   }
 })
 
+.controller('MilestoneCtrl', function($scope, $state, $stateParams, Classes){
+  $scope.idea = Classes.getIdea($stateParams.classId, $stateParams.ideaId);
+
+  $scope.goToAddMilestone = function() {
+    if (User.getUser().uname === $scope.idea.owner) {
+      $state.go('addMilestone');
+    }
+  }
+})
+
+.controller('AddMilestoneCtrl', function($scope, $state, $stateParams, Classes, User){
+
+})
+
 .controller('IdeaDetailCtrl', function($scope, $state, Classes, $stateParams) {
 	console.log($stateParams.classId);
 	console.log($stateParams.ideaId);
