@@ -118,7 +118,7 @@ angular.module('starter.services', [])
         id: 1,
         name: 'Legit Post2',
         description: 'legit post2',
-        messages: [{name: "regular1", msg: "I know2"}, {name: "regular2", msg: "I don't know2"}],
+        messages: [{name: "regular1", msg: "I know2"}, {name: "regular2", msg: "I don't know2"}]}],
       milestones : [{
         id : 12,
         name : 'Milestone 1',
