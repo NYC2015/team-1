@@ -110,18 +110,31 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('MilestoneCtrl', function($scope, $state, $stateParams, Classes){
+.controller('MilestoneCtrl', function($scope, $state, $stateParams, User, Classes){
   $scope.idea = Classes.getIdea($stateParams.classId, $stateParams.ideaId);
+  $scope.workingbutton = !(User.getUser().uname == $scope.idea.owner);
+  $scope.milestones = $scope.idea.milestones;
+
 
   $scope.goToAddMilestone = function() {
-    if (User.getUser().uname === $scope.idea.owner) {
-      $state.go('addMilestone');
-    }
+    $state.go('addMilestone', {classId: $stateParams.classId, ideaId: $stateParams.ideaId});
+  }
+
+  $scope.goDetail = function(milestone) {
+    $state.go('milestone-detail', {classId: $stateParams.classId, ideaId: $stateParams.ideaId, milestoneId: milestone.id});
   }
 })
 
 .controller('AddMilestoneCtrl', function($scope, $state, $stateParams, Classes, User){
-  console.log('Stuff');
+  $scope.idea = Classes.getIdea($stateParams.classId, $stateParams.ideaId);
+  console.log($scope.idea);
+  console.log($stateParams.classId);
+  console.log($stateParams.ideaId);
+
+  $scope.addMilestone = function(name, lookingBack, movingForward) {
+    Classes.addMilestone(name,lookingBack,movingForward,$scope.idea);
+    $state.go('milestonelist', {classId: $stateParams.classId, ideaId: $stateParams.ideaId});
+  }
 })
 
 .controller('IdeaDetailCtrl', function($scope, $state, Classes, $stateParams) {
@@ -154,6 +167,11 @@ angular.module('starter.controllers', [])
 	}
 })
 
+.controller('MilestoneDetailCtrl', function($scope, $stateParams, Classes) {
+  $scope.milestone = Classes.getMilestone($stateParams.classId, $stateParams.ideaId, $stateParams.milestoneId);
+  console.log($scope.milestone);
+})
+
 .controller('UpvoteCtrl', function($scope) {
   
 })
@@ -173,9 +191,4 @@ angular.module('starter.controllers', [])
 	$scope.submitPost = function(msg) {
 		$scope.curpost.messages.push({name: User.getUser().uname, msg: msg});
 	}
-})
-
-.controller('MilestoneCtrl', function($scope) {
-  
-})
-;
+});
