@@ -4,10 +4,11 @@
       <span class="input-label">Idea Name</span>
       <input ng-model='name' type="text">
     </label>
-    <label class="item item-input">
-      <span  class="input-label">Description</span>
-      <input ng-model='Description' type="password">
-    </label>
+    <textarea style="width: 100%; border-width: 2px; border-style: solid;" rows='6' ng-model="description">
+    </textarea>
+
+
+
     <br>
     <br>
     <button class="button button-block button-positive button-outline" ng-click="addIdea(name, description)">Add Idea</button>
