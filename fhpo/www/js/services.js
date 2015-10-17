@@ -52,20 +52,16 @@ angular.module('starter.services', [])
 .factory('User', function() {
   var users = [{
     uname: 'regular1',
-    pass: 'regular1',
-    type: 'regular'
+    pass: 'regular1'
   }, {
     uname: 'admin1',
-    pass: 'admin1',
-    type: 'admin'
+    pass: 'admin1'
   }, {
     uname: 'admin2',
-    pass: 'admin2',
-    type: 'admin'
+    pass: 'admin2'
   }, {
     uname: 'regular2',
-    pass: 'regular2',
-    type: 'regular'
+    pass: 'regular2'
   }];
 
   var currentUser = {};
@@ -85,6 +81,12 @@ angular.module('starter.services', [])
     },
     getUser: function() {
       return currentUser;
+    },
+    addUser: function(username, password) {
+      users.push({
+        uname: username,
+        pass: password
+      });
     }
   };
 })

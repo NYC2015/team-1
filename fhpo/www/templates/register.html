@@ -1,0 +1,13 @@
+<ion-view view-title="Registration">
+  <ion-content class="padding" style="text-align: center">
+    <label class="item item-input">
+      <span class="input-label">Username</span>
+      <input ng-model='username' type="text">
+    </label>
+    <label class="item item-input">
+      <span  class="input-label">Password</span>
+      <input ng-model='password' type="password">
+    </label>
+    <button class="button button-block button-positive" ng-click="submit(username,password)">Submit</button>
+  </ion-content>
+</ion-view>

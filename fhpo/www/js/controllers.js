@@ -34,6 +34,17 @@ angular.module('starter.controllers', [])
   		$state.go('classes');
   	}
   }
+
+  $scope.register = function() {
+    $state.go('register');
+  }
+})
+
+.controller('RegisterCtrl', function($scope, $state, User) {
+  $scope.submit = function(username, password) {
+    User.addUser(username, password);
+    $state.go('login');
+  }
 })
 
 .controller('ClassCtrl', function($scope, Classes) {
