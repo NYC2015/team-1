@@ -103,7 +103,7 @@ angular.module('starter.services', [])
     users : []
   }, {
     id : 141,
-    name : 'Kenney HS Job Class 2',
+    name : 'Kennedy HS Job Class 2',
     password : 'kennedy2',
     subject : 'Costumes for Halloween',
     admins : ['admin2'],
