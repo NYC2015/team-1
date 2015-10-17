@@ -1,0 +1,20 @@
+<ion-view view-title="Add Milestone">
+  <ion-content class="" style="text-align: center">
+    <label class="item item-input">
+      <span class="input-label">Milestone Name</span>
+      <input ng-model='name' type="text">
+    </label>
+    <label class="item item-input">
+      <span  class="input-label">Looking Back</span>
+      <input ng-model='lookingBack' type="text">
+    </label>
+    <label class="item item-input">
+      <span  class="input-label">Moving Foward</span>
+      <input ng-model='movingFoward' type="text">
+    </label>
+    <br>
+    <button class="button button-outline button-block button-positive" ng-click="addClass(name, lookingBack, movingFoward)">Add Milestone</button>
+  </ion-content>
+</ion-view>
+
+
