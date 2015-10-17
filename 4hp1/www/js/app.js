@@ -79,6 +79,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   });
 
+  .state('login' , {
+    url: '/login',
+    views: {
+      'login': {
+        templateURL: 'templates/login.html',
+        controller: 'LoginCtrl'
+      }
+    }
+  })
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
 
