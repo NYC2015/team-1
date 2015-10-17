@@ -39,7 +39,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   .state('classes',{
     url: '/classes',
-    templateUrl: 'templates/classes.html'
+    templateUrl: 'templates/classes.html',
+    controller: 'ClassCtrl'
   })
 
   .state('class-detail', {

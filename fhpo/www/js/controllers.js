@@ -36,8 +36,8 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('ClassCtrl', function($scope) {
-
+.controller('ClassCtrl', function($scope, Classes) {
+	$scope.classes = Classes.all();
 })
 
 .controller('IdeaCtrl', function($scope) {
