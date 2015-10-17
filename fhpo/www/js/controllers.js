@@ -89,10 +89,16 @@ angular.module('starter.controllers', [])
   $scope.addIdea = function() {
     for (var i = 0; i < idea.members.length; i++) {
       if (User.getUser().uname == idea.members[i]) {
+        $state.go('addIdea');
         return false;
       }
     }
-    $state.go('addIdea');
+    for (var i = 0; i < idea.admins.length; i++) {
+      if (User.getUser().uname == idea.admins[i]) {
+        $state.go('addIdea');
+        return false;
+      }
+    }
   }
   
 })
