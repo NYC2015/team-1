@@ -47,4 +47,41 @@ angular.module('starter.services', [])
       return null;
     }
   };
+})
+
+.factory('User', function() {
+  var users = [{
+    uname: 'regular1',
+    pass: 'regular1',
+    type: 'regular'
+  }, {
+    uname: 'admin1',
+    pass: 'admin1',
+    type: 'admin'
+  }, {
+    uname: 'admin2',
+    pass: 'admin2',
+    type: 'admin'
+  }, {
+    uname: 'regular2',
+    pass: 'regular2',
+    type: 'regular'
+  }];
+
+  var currentUser;
+
+  return {
+    isUser: function(name,pass) {
+      for (var i = 0; i < users.length; i++) {
+        if (users[i].uname == name && users[i].pass == pass) {
+          currentUser = users[i];
+          return true
+        }
+      }
+      return false;
+    },
+    isAdmin: function() {
+      return currentUser.type == 'admin';
+    }
+  };
 });
