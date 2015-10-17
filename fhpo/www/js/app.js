@@ -68,7 +68,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
 
   .state('addidea', {
-    url: '/addidea',
+    url: '/addidea/:classId',
     templateUrl: 'templates/add-idea.html',
     controller: 'AddIdeaCtrl'
   })
