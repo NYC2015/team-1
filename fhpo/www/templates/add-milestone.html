@@ -4,16 +4,13 @@
       <span class="input-label">Milestone Name</span>
       <input ng-model='name' type="text">
     </label>
-    <label class="item item-input">
-      <span  class="input-label">Looking Back</span>
-      <input ng-model='lookingBack' type="text">
-    </label>
-    <label class="item item-input">
-      <span  class="input-label">Moving Foward</span>
-      <input ng-model='movingFoward' type="text">
-    </label>
+
+    <textarea style="width: 100%; border-width: 2px; border-style: solid;" rows='6' ng-model="lookingBack" placeholder="Looking Back" ></textarea>
     <br>
-    <button class="button button-outline button-block button-positive" ng-click="addClass(name, lookingBack, movingFoward)">Add Milestone</button>
+    <textarea style="width: 100%; border-width: 2px; border-style: solid;" rows='6' ng-model="movingForward" placeholder="Moving Forward"></textarea>
+
+    <br>
+    <button class="button button-outline button-block button-positive" ng-click="addMilestone(name, lookingBack, movingForward)">Add Milestone</button>
   </ion-content>
 </ion-view>
 

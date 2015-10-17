@@ -79,6 +79,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     controller: 'MilestoneCtrl'
   })
 
+  .state('milestone-detail', {
+      url: '/milestonedetail?classId&ideaId&milestoneId',
+      templateUrl: "templates/milestone-detail.html",
+      controller: 'MilestoneDetailCtrl'
+  })
 
   .state('addMilestone', {
     url: '/addMilestone?classId&ideaId',
