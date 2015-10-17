@@ -84,6 +84,15 @@ angular.module('starter.controllers', [])
 		idea.members.push(User.currentUser);
 		return false;
 	}
+
+  $scope.newIdea = function() {
+    for (var i = 0; i < idea.members.length; i++) {
+      if (User.getUser().uname == idea.members[i]) {
+        return false;
+      }
+    }
+    $state.go('newIdea');
+  }
   
 })
 
