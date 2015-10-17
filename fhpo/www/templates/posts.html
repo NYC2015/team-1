@@ -1,0 +1,30 @@
+
+
+<ion-view view-title="{{idea.name}}">
+
+  <ion-content>
+   
+      <h2>{{curpost.name}}</h2>
+      <h3>{{curpost.description}}</h3>
+      <ion-list>
+      <ion-item ng-repeat="m in curpost.messages" >
+        <div style="width: 100%; border-width: 2px; border-style: solid;">
+            <h2>{{m.name}}</h2><br>
+            <h3>{{m.msg}}</h3>
+        </div>
+      </ion-item>
+      </ion-list>
+    
+
+  </ion-content>
+
+  <ion-footer-bar class="bar-stable item-input-inset"  keyboard-attach>
+                  <label class="item-input-wrapper">
+                      <textarea ng-model="newmsg" value="" style="width: 100%;" placeholder="Type a response..." required minlength="1" maxlength="1500"></textarea>
+                  </label>
+                  <div class="footer-btn-wrap">
+                    <button class="button button-icon icon ion-android-send footer-btn" ng-click="submitPost(newmsg)">
+                    </button>
+                  </div>
+              </ion-footer-bar>
+</ion-view>

@@ -163,7 +163,7 @@ angular.module('starter.controllers', [])
 	}
 
 	$scope.posts = function() {
-		$state.go('postslist', {classId: $stateParams.classId, ideaId: $stateParams.ideaId});
+		$state.go('posts', {classId: $stateParams.classId, ideaId: $stateParams.ideaId});
 	}
 })
 
@@ -180,6 +180,15 @@ angular.module('starter.controllers', [])
   
 })
 
-.controller('PostCtrl', function($scope) {
-  
-})
+.controller('PostsCtrl', function($scope, $state, $stateParams, User, Classes) {
+	$scope.class = Classes.get($stateParams.classId);
+	$scope.idea = Classes.getIdea($stateParams.classId, $stateParams.ideaId);
+	$scope.posts = $scope.idea.posts;
+	$scope.curpost = $scope.posts[0];
+	$scope.postId = $scope.curpost.id;
+	$scope.newmsg = "";
+
+	$scope.submitPost = function(msg) {
+		$scope.curpost.messages.push({name: User.getUser().uname, msg: msg});
+	}
+});
