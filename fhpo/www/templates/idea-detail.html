@@ -1,17 +1,9 @@
 <ion-view view-title="{{idea.name}}">
   <ion-content>
     <h2>Description</h2>
-    <textarea style="width: 100%; border-width: 5px; border-style: solid;" rows='6' ng-model="idea.description">
+    <textarea style="width: 100%; border-width: 2px; border-style: solid;" rows='6' ng-model="idea.description">
     </textarea>
-    <ion-list>
-      <ion-item ng-repeat="idea in ideas" >
-        <div class='button button-block button-clear button-positive item-icon-right' ng-click='goIdea(idea.id)'>
-        <h2>{{idea.name}}</h2>
-        </div>
-        <br>
-        <div ng-click='like(idea)' class="button button-small button-clear ion-checkmark-circled button-positive"> {{idea.likes}} Likes</div>
-        <div ng-click='join(idea)' class="button button-small button-clear ion-forward button-positive"> Join</div>
-      </ion-item>
-    </ion-list>
+    <div ng-click='like(idea)' class="button button-small button-clear ion-checkmark-circled button-positive"> {{idea.likes}} Likes</div>
+    <div ng-click='join(idea)' class="button button-small button-clear ion-forward button-positive"> Join</div>
   </ion-content>
 </ion-view>

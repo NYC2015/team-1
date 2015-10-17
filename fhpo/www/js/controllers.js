@@ -108,6 +108,21 @@ angular.module('starter.controllers', [])
 	console.log($stateParams.ideaId);
 	$scope.class = Classes.get($stateParams.classId);
 	$scope.idea = Classes.getIdea($stateParams.classId, $stateParams.ideaId);
+
+	$scope.join = function(idea) {
+		for (var i = 0; i < idea.members.length; i++) {
+			if (User.getUser().uname == idea.members[i]) {
+				return false;
+			}
+		}
+		idea.members.push(User.currentUser);
+		return false;
+	}
+
+	$scope.like = function(idea) {
+		idea.likes = idea.likes + 1;
+		return false;
+	}
 })
 
 .controller('UpvoteCtrl', function($scope) {
