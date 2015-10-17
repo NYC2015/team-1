@@ -55,9 +55,10 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('AddClassCtrl', function($scope, $state, Classes) {
+.controller('AddClassCtrl', function($scope, $state, User, Classes) {
+  $scope.username = User.getUser().uname;
   $scope.addClass = function(name, password, subject) {
-    Classes.addClass(name, password, subject);
+    Classes.addClass($scope.username, name, password, subject);
     $state.go('classes');
   }
 })
@@ -142,6 +143,14 @@ angular.module('starter.controllers', [])
 	$scope.like = function(idea) {
 		idea.likes = idea.likes + 1;
 		return false;
+	}
+
+	$scope.milestones = function() {
+		$state.go('milestonelist', {classId: $stateParams.classId, ideaId: $stateParams.ideaId});
+	}
+
+	$scope.posts = function() {
+		$state.go('postslist', {classId: $stateParams.classId, ideaId: $stateParams.ideaId});
 	}
 })
 

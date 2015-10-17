@@ -250,21 +250,20 @@ angular.module('starter.services', [])
       }
       return null;
     },
-    addClass: function(username, password, subject) {
-      classes.push(
+    addClass: function(username, classname, password, subject) {
+      var addedClass = 
         {
           id: id,
-          name: username,
+          name: classname,
           password: password,
           subject: subject,
-          admins: [],
+          admins: [username],
           users: [],
           ideas: []
-        }
-      );
+        };
+      classes.push(addedClass);
       id++;
     },
-
     addIdea: function(username, classid, ideaname, description) {
       for (var i = 0; i < classes.length; i++) {
         if (classes[i].id === parseInt(classid)) {
@@ -281,7 +280,6 @@ angular.module('starter.services', [])
         }
       }
     },
-
     getIdea: function(classId, ideaId) {
       for (var i = 0; i < classes.length; i++) {
         if (classes[i].id === parseInt(classId)) {

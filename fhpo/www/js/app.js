@@ -73,7 +73,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     controller: 'AddIdeaCtrl'
   })
 
-    .state('milestonelist', {
+  .state('milestonelist', {
     url: '/milestonelist?classId&ideaId',
     templateUrl: 'templates/milestones.html',
     controller: 'MilestoneCtrl'
@@ -86,6 +86,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     controller: 'AddMilestoneCtrl'
   })
 
+
+  .state('posts', {
+    url: '/posts?classId&ideaId',
+    templateUrl: "templates/posts.html",
+    controller: 'PostsCtrl'
+  })
 
   // setup an abstract state for the tabs directive
     .state('tab', {
