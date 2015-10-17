@@ -1,5 +1,6 @@
 <ion-view view-title="{{class.subject}}">
   <ion-content>
+    <button class="button button-block button-positive" ng-click="newIdea()">Add Idea</button>
     <ion-list>
       <ion-item ng-repeat="idea in ideas" >
         <div class='button button-clear button-positive item-icon-right' ng-click='goIdea(idea.id)'>
