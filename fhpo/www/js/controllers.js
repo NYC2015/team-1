@@ -101,6 +101,7 @@ angular.module('starter.controllers', [])
 	console.log($stateParams.classId);
 	console.log($stateParams.ideaId);
 	$scope.class = Classes.get($stateParams.classId);
+	$scope.idea = Classes.getIdea($stateParams.classId, $stateParams.ideaId);
 })
 
 .controller('UpvoteCtrl', function($scope) {
