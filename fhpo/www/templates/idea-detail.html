@@ -1,7 +1,7 @@
 <ion-view view-title="{{idea.name}}">
   <ion-content>
     <h2>Description</h2>
-    <textarea style="width: 100%; border-width: 2px; border-style: solid;" rows='6' ng-model="idea.description">
+    <textarea style="width: 100%; border-width: 2px; border-style: solid; border-color: gray" rows='6' ng-model="idea.description">
     </textarea>
     <div ng-click='like(idea)' class="button button-small button-clear ion-checkmark-circled button-positive"> {{idea.likes}} Likes</div>
     <div ng-click='join(idea)' class="button button-small button-clear ion-forward button-positive"> Join</div>
