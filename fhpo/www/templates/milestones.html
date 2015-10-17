@@ -1,8 +1,8 @@
 <ion-view view-title="Milestones">
   <ion-content>
-    <button class="button button-block button-outline button-positive" ng-disable="{{User.getUser().uname===idea.owner}}" ng-click="goToAddMilestone()">Add Milestone</button>
+    <button class="button button-block button-outline button-positive" ng-disabled="workingbutton" ng-click="goToAddMilestone()">Add Milestone</button>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="milestone in Milestones" type="item-text-wrap" href="#/milestone/{{milestone.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="milestone in milestones" type="item-text-wrap" ng-click="goDetail(milestone)">
         <h2>{{milestone.name}}</h2>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
