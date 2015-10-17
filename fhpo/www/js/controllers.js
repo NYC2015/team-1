@@ -121,7 +121,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AddMilestoneCtrl', function($scope, $state, $stateParams, Classes, User){
-
+  console.log('Stuff');
 })
 
 .controller('IdeaDetailCtrl', function($scope, $state, Classes, $stateParams) {

@@ -76,7 +76,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('milestonelist', {
     url: '/milestonelist?classId&ideaId',
     templateUrl: 'templates/milestones.html',
-    controller: 'IdeaDetailCtrl'
+    controller: 'MilestoneCtrl'
   })
 
 
