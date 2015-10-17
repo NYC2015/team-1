@@ -37,6 +37,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     controller: 'LoginCtrl'
   })
 
+  .state('classes',{
+    url: '/classes',
+    templateUrl: 'templates/classes.html'
+  })
+
+  .state('class-detail', {
+      url: '/class/:classId',
+      views: {
+        'class-detail': {
+          templateUrl: 'templates/class-detail.html',
+          controller: 'ClassDetailCtrl'
+        }
+      }
+  })
+
   // setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',
