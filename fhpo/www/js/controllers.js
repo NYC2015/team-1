@@ -87,20 +87,26 @@ angular.module('starter.controllers', [])
 	}
 
   $scope.addIdea = function() {
-    for (var i = 0; i < idea.members.length; i++) {
-      if (User.getUser().uname == idea.members[i]) {
-        $state.go('addIdea');
-        return false;
+    for (var i = 0; i < $scope.class.users.length; i++) {
+      if (User.getUser().uname === $scope.class.users[i]) {
+        $state.go('addidea', {classId: $stateParams.classId});
+        break;
       }
     }
-    for (var i = 0; i < idea.admins.length; i++) {
-      if (User.getUser().uname == idea.admins[i]) {
-        $state.go('addIdea');
-        return false;
+    for (var i = 0; i < $scope.class.admins.length; i++) {
+      if (User.getUser().uname === $scope.class.admins[i]) {
+        $state.go('addidea', {classId: $stateParams.classId});
+        break;
       }
     }
   }
-  
+})
+
+.controller('AddIdeaCtrl', function($scope, $state, $stateParams, User, Classes) {
+  $scope.addIdea = function(name, description) {
+    Classes.addIdea(User.getUser().uname, $stateParams.classId, name, description);
+    $state.go('class-detail', {classId: $stateParams.classId});
+  }
 })
 
 .controller('IdeaDetailCtrl', function($scope, $state, Classes, $stateParams) {

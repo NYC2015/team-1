@@ -191,6 +191,24 @@ angular.module('starter.services', [])
       );
       id++;
     },
+
+    addIdea: function(username, classid, ideaname, description) {
+      for (var i = 0; i < classes.length; i++) {
+        if (classes[i].id === parseInt(classid)) {
+          classes[i].ideas.push({
+            id: ideaid,
+            name: ideaname,
+            description: description,
+            owner: username,
+            likes: 1,
+            members: [username]
+          });
+          ideaid++;
+          break;
+        }
+      }
+    },
+
     getIdea: function(classId, ideaId) {
       for (var i = 0; i < classes.length; i++) {
         if (classes[i].id === parseInt(classId)) {
