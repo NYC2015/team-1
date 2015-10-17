@@ -93,6 +93,7 @@ angular.module('starter.services', [])
 
 .factory('Classes', function() {
   var id = 142;
+  var ideaid = 7;
   var classes = [{
     id : 139,
     name : 'JP Morgan Code for Good',
