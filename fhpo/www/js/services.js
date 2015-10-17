@@ -94,6 +94,7 @@ angular.module('starter.services', [])
 .factory('Classes', function() {
   var id = 142;
   var ideaid = 7;
+  var postid = 100;
   var classes = [{
     id : 139,
     name : 'JP Morgan Code for Good',
@@ -107,7 +108,18 @@ angular.module('starter.services', [])
       description : 'An app in which students can submit ideas.',
       owner : 'regular1',
       likes : 1,
-      members : ['regular1']
+      members : ['regular1'],
+      posts: [{
+        id: 0,
+        name: 'Legit Post',
+        description: 'What do we do with proj?',
+        messages: [{name: "regular1", msg: "I know"}, {name: "regular2", msg: "I don't know"}]
+      }, {
+        id: 1,
+        name: 'Legit Post2',
+        description: 'legit post2',
+        messages: [{name: "regular1", msg: "I know2"}, {name: "regular2", msg: "I don't know2"}]
+      }]
     }, {
       id : 2,
       name : 'Feed a Child App',
