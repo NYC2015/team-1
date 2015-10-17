@@ -92,6 +92,7 @@ angular.module('starter.services', [])
 })
 
 .factory('Classes', function() {
+  var id = 142;
   var classes = [{
     id : 139,
     name : 'JP Morgan Code for Good',
@@ -176,14 +177,18 @@ angular.module('starter.services', [])
       return null;
     },
     addClass: function(username, password, subject) {
-      classes.push({
-        id: Math.random()*100,
-        name: username,
-        password: password,
-        subject: subject,
-        admins: [],
-        users: []
-      });
+      classes.push(
+        {
+          id: id,
+          name: username,
+          password: password,
+          subject: subject,
+          admins: [],
+          users: [],
+          ideas: []
+        }
+      );
+      id++;
     }
   };
 });
