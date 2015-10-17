@@ -93,14 +93,58 @@ angular.module('starter.services', [])
     password : 'password',
     subject : 'Program for Social Good',
     admins : ['admin1'],
-    users : []
+    users : ['regular1', 'regular2'],
+    ideas : [{
+      id : 13901,
+      name : 'Job Class Phone App',
+      description : 'An app in which students can submit ideas.',
+      owner : 'regular1',
+      likes : 1,
+      members : ['regular1']
+    }, {
+      id : 13902,
+      name : 'Feed a Child App',
+      description : 'An app that helps deliver food to starving people.',
+      owner : 'regular2',
+      likes : 2,
+      members : ['regular2']
+    }, {
+      id : 13903,
+      name : 'Rock the Earth App',
+      description : 'An app that allows students to help preserve the earth.',
+      owner : 'regular1',
+      likes : 1,
+      members : ['regular1', 'regular2']
+    }, {
+      id : 13904,
+      name : 'Keep a Child Alive App',
+      description : 'An app that helps connect those with AIDS.',
+      owner : 'regular2',
+      likes : 2,
+      members : ['regular2']
+    }]
   }, {
     id : 140,
     name : 'Kennedy HS Job Class 1',
     password : 'kennedy1',
     subject : 'Best Gifts for Christmas',
     admins : ['admin1'],
-    users : []
+    users : ['regular1'],
+    ideas : [{
+      id : 14001,
+      name : 'Pepperoni Pizza',
+      description : 'Delicious AND Unhealthy!',
+      owner : 'admin1',
+      likes : 15,
+      members : ['admin1', 'regular1']
+    }, {
+      id : 14002,
+      name : 'Bugatti Veyron 16.4',
+      description : 'Gotta go fast.',
+      owner : 'regular1',
+      likes : 4,
+      members : ['regular1']
+    }]
   }, {
     id : 141,
     name : 'Kennedy HS Job Class 2',
